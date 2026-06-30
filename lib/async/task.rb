@@ -223,12 +223,7 @@ module Async
 				schedule do
 					block.call(self, *arguments)
 				rescue => error
-					# I'm not completely happy with this overhead, but the alternative is to not log anything which makes debugging extremely difficult. Maybe we can introduce a debug wrapper which adds extra logging.
-					unless @promise.waiting?
-						warn(self, "alksjdlaksjdlaksjdlasd", exception: error)
-					end
-					
-					raise
+					raise(error)
 				end
 			else
 				raise RuntimeError, "Task already running!"
