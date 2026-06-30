@@ -225,7 +225,7 @@ module Async
 				rescue => error
 					# I'm not completely happy with this overhead, but the alternative is to not log anything which makes debugging extremely difficult. Maybe we can introduce a debug wrapper which adds extra logging.
 					unless @promise.waiting?
-						warn(self, "Task may have ended with unhandled exception.", exception: error)
+						warn(self, "alksjdlaksjdlaksjdlasd", exception: error)
 					end
 					
 					raise
